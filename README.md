@@ -26,17 +26,17 @@ Firstly, the New York data did not come with data for the chinese restaurants. T
 
 Note that the data for this project is limited in the sense that the details of each venue gathered are based on foursquare's existing database.
 
-![ny_df](images/ny_df)
+![ny_df](images/ny_df.png)
 
 As the foursquare api could only retrieve details of restaurants based on the radius from the centre of a specified latitude and longitude, I was unable to retrieve all chinese restaurants by neighborhood. Moreover, due to limitations in the number of calls I could do as I was a non-premium member, I limited the radius from the center of the neighborhood to 2km. Thus, only chinese restaurants which are within a 2km radius from the center of the neighborhood would be retrieved from the foursquare api.
 
 See below for the resulting dataframe, which I have named chinese_restaurant_df:
 
-![chinese_restaurant_df_unfiltered](images/chinese_restaurant_df_unfiltered)
+![chinese_restaurant_df_unfiltered](images/chinese_restaurant_df_unfiltered.png)
 
 After exploring chinese_restaurant_df, I noticed that there was a discrepancy in the number of unique neighborhoods (300) as opposed to the number of unique chinese restaurants by coordinates (270). Moreover, while the number of unique chinese restaurants by name is 255, the unique count by restaurant ID is 270. Thus, it is likely that some chinese restaurants have the same name, yet are not referring to the same restaurants since they have different IDs and are located in different places.
 
-![chinese_restaurant_df_exp](images/chinese_restaurant_df_exp)
+![chinese_restaurant_df_exp](images/chinese_restaurant_df_exp.png)
 
 Now, I will create a new unique_chinese_restaurant_df by removing the duplicated restaurants by ID. The number of duplicated restaurants removed is 34, resulting in only 270 chinese restaurants in the dataframe.
 
@@ -44,21 +44,21 @@ Since the remaining dataframe consists only of unique chinese restaurants, I wil
 
 The new dataframe now looks like the below:
 
-![chinese_restaurant_details_df](images/chinese_restaurant_details_df)
+![chinese_restaurant_details_df](images/chinese_restaurant_details_df.png)
 
 Exploring the dataframe, we get:
 
-![chinese_restaurant_df_info](images/chinese_restaurant_df_info)
+![chinese_restaurant_df_info](images/chinese_restaurant_df_info.png)
 
 Notice that the column 'Ratings' has 99 non-null Count which means more than 60% of the values for the column is missing. Thus, I will be dropping the entire column before feeding it for training as it would not provide much information.
 
 Next, I will normalize the values of 'Likes', 'Ratings', and 'Price Tier' to plot a bar graph so as to visualize the top 10 most popular chinese restaurants by 'Likes'.
 
-![most_popular_chinese_restaurant](images/most_popular_chinese_restaurant)
+![most_popular_chinese_restaurant](images/most_popular_chinese_restaurant.png)
 
 As seen earlier, there are numerous null values in the 'Price Tier' column as well. To see if I will be able to find a relationship between 'Likes' and 'Price Tier', and thus fill the missing values with a prediction, I will make a scatter plot between the two columns. See below for the plot:
 
-![likes_against_price](images/likes_against_price)
+![likes_against_price](images/likes_against_price.png)
 
 As seen from the above, there is no clear relationship between the two columns. Moreover, since I am only seeking to predict a restaurant's popularity based on locaton, the 'Price Tier' variable should not be part of the feature set. Thus, I will drop the 'Price Tier' column.
 
@@ -66,19 +66,19 @@ Now, I will have to retrieve all the nearby venues for each chinese restaurant a
 
 The resulting dataframe is as follows:
 
-![onehot_likes](images/onehot_likes)
+![onehot_likes](images/onehot_likes.png)
 
 Since I will be training the models to classify them into 3 categories - Popular, Average, Unpopular - I have decided to take the top 25 percentile most liked restaurant and labeled them as 'Popular', while the bottom 25 percentile liked restaurants are labeled as 'Unpopular'. The remaining restaurants have been labeled 'Average' under the 'Popularity' column.
 
 See the below dataframe:
 
-![onehot_popularity](images/onehot_popularity)
+![onehot_popularity](images/onehot_popularity.png)
 
 ### 3.3 Feature Selection
 
 From the onehot encoded dataframe, I removed the columns 'Neighborhood', 'Restaurant ID', 'Restaurant Name', 'Restaurant Latitude', 'Restaurant Longitude', 'Popularity', 'Price Tier', 'Likes', keeping only the existence of a venue in the viscinity of the chinese restaurant. See below.
 
-![features](images/features)
+![features](images/features.png)
 
 The column 'Popularity' was assigned to the outcome vector variable y.
 
