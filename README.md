@@ -5,33 +5,33 @@
 
 1. [Introduction](#1-introduction)
 
-    1. [Background](#1.1-background)
+    1. [Background](#11-background)
 
-    2. [Problem](#1.2-problem)
+    2. [Problem](#12-problem)
 
-    3. [Interest](#1.3-interest)
+    3. [Interest](#13-interest)
 
 2. [Data](#2-data)
 
-    1. [Data Sources](#2.1-data-sources)
+    1. [Data Sources](#21-data-sources)
 
-    2. [Data Cleaning](#2.2-data-cleaning)
+    2. [Data Cleaning](#22-data-cleaning)
 
-    3. [Feature Selection](#2.3-feature-selection)
+    3. [Feature Selection](#23-feature-selection)
 
 3. [Predictive Modeling](#3-predictive-modeling)
 
-    1. [Classification Models](#3.1-classification-models)
-        1. [K Nearest Neighbors](#3.1.1-k-nearest-neighbors)
-        2. [Decision Tree](#3.1.2-decision-tree)
-        3. [Support Vector Machine](#3.1.3-support-vector-machine-svm)
-        4. [Logistic Regression](#3.1.4-logistic-regression)
+    1. [Classification Models](#31-classification-models)
+        1. [K Nearest Neighbors](#311-k-nearest-neighbors)
+        2. [Decision Tree](#312-decision-tree)
+        3. [Support Vector Machine](#313-support-vector-machine-svm)
+        4. [Logistic Regression](#314-logistic-regression)
 
-    2. [Model Evaluation](#3.2-model-evaluation)
+    2. [Model Evaluation](#32-model-evaluation)
 
-    3. [Model Application](#3.3-model-application)
-        1. [Data for finding best locations](#3.3.1-data-for-finding-best-locations)
-        2. [Visualizing Results](#3.2-visualizing-results)
+    3. [Model Application](#33-model-application)
+        1. [Data for finding best locations](#331-data-for-finding-best-locations)
+        2. [Visualizing Results](#32-visualizing-results)
 
 4. [Conclusion](#4-conclusion)
 
@@ -39,7 +39,7 @@
 
 ## 1. Introduction
 
-### 1.1  Background
+### 1.1 Background
 In 2018, according to the International Monetary Fund, China's economy produced $25.3 trillion. This figure is based on the purchasing power parity which takes into account the effect of exchange rates, making it the best method for comparing gross domestic product by country.
 
 This makes China the world's largest economy, seconded by the EU with $22 trillion and the United States third, producing $20.5 trillion.
@@ -130,13 +130,13 @@ The column 'Popularity' was assigned to the outcome vector variable y.
 
 ## 3. Predictive Modeling
 
-Since I know that there are 3 categories of popularity - 'Popular', 'Average', 'Unpopular' - that I am trying to train the model to predict and it I have the number of 'Likes', which is used as the metric for popularity, I will be using a supervised learning model. In this case, I have chosen to use classification type. After selecting the features in [Feature Selection](#2.3-feature-selection), I used the method [train_test_split](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html) in the scikit-learn package to split the dataset leaving behind 80% for training and 20% for testing.
+Since I know that there are 3 categories of popularity - 'Popular', 'Average', 'Unpopular' - that I am trying to train the model to predict and it I have the number of 'Likes', which is used as the metric for popularity, I will be using a supervised learning model. In this case, I have chosen to use classification type. After selecting the features in [Feature Selection](#23-feature-selection), I used the method [train_test_split](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html) in the scikit-learn package to split the dataset leaving behind 80% for training and 20% for testing.
 
 In the next few sections, I will be exploring the use of K Nearest Neighbors, Decision Tree, Support Vector Machine, and Logistic Regression to determine which will give the highest accuracy and, thus use it to predict the popularity of each venue.
 
 ## 3.1 Classification Models
 
-Now, for each model, I will be using plotting a graph of accuracy against a hyperparameter. This is to determine what value of the hyperparameter will yield the best results. After which, I will use these best hyperparameters for each model and compare them with one another in [Model Evaluation](#3.2-model-evaluation) to determine which model is the best for predicting popularity of each venue.
+Now, for each model, I will be using plotting a graph of accuracy against a hyperparameter. This is to determine what value of the hyperparameter will yield the best results. After which, I will use these best hyperparameters for each model and compare them with one another in [Model Evaluation](#32-model-evaluation) to determine which model is the best for predicting popularity of each venue.
 
 ### 3.1.1 K Nearest Neighbors (KNN)
 
@@ -192,11 +192,11 @@ See below for the scores calculated for each classifier:
 
 Looking at the above metric score table, it is clear that KNN model surpasses the others. Note however that the scores aren't high at all. This is likely due to a lack of dataset which will be explained in [Conclusion](#4-conclusion) and proposal to solutions is in [Future Work](#5-future-work).
 
-Now, refer to [Model Application](#3.3-model-application) to see the results!
+Now, refer to [Model Application](#33-model-application) to see the results!
 
 ## 3.3 Model Application
 
-In this section, I will be applying KNN, as previously determined in [Model Evaluation](#3.2-model-evaluation) that it yields the best scores, to predict the potential popularity of each venue in New York if used as a Chinese restaurant. [Section 3.3.1 Data for finding best locations](#3.3.1-data-for-finding-best-locations) details the steps taken to preparing the data such that the KNN model can predict the likelihood of a venue's success as a Chinese restaurant based on its location. [Section 3.3.2 Visualizing Results](#3.3.2-visualizing-results) portrays the map of New York with the best and worst spots superimposed on top.
+In this section, I will be applying KNN, as previously determined in [Model Evaluation](#32-model-evaluation) that it yields the best scores, to predict the potential popularity of each venue in New York if used as a Chinese restaurant. [Section 3.3.1 Data for finding best locations](#331-data-for-finding-best-locations) details the steps taken to preparing the data such that the KNN model can predict the likelihood of a venue's success as a Chinese restaurant based on its location. [Section 3.3.2 Visualizing Results](#332-visualizing-results) portrays the map of New York with the best and worst spots superimposed on top.
 
 ### 3.3.1 Data for finding best locations
 
@@ -216,17 +216,17 @@ Below shows the describe method output for the above dataframe:
 
 Notice that the resulting one hot encoded dataframe only has 242 columns for the existence of various categories of venues, such as 'Accessories Store' and 'American Restaurant', as opposed to the original feature set that was used to train the classifiers, which had 364 columns.
 
-This shows that not all venues that were scraped by the Foursquare API existed in the dataframe that was used to train the models earlier on in [2.3 Feature Selection](#2.3-feature-selection). Thus, I dropped all new columns in the current dataframe that I am attempting to predict the popularity of so as to match the trained model. I also had to append columns that were missing from the current dataframe but was used to train the model so as to match the input dataframe to the feature set.
+This shows that not all venues that were scraped by the Foursquare API existed in the dataframe that was used to train the models earlier on in [2.3 Feature Selection](#23-feature-selection). Thus, I dropped all new columns in the current dataframe that I am attempting to predict the popularity of so as to match the trained model. I also had to append columns that were missing from the current dataframe but was used to train the model so as to match the input dataframe to the feature set.
 
 The resulting dataframe is shown below:
 
 ![x_pred](images/x_pred.png)
 
-It has 1191 rows of venues and for each venue there were 364 columns. This matched the shape used in [Feature Selection](#2.3-feature-selection), thus I am confident of moving forward with prediction in [3.3.2 Visualizing Results](#3.3.2-visualizing-results)
+It has 1191 rows of venues and for each venue there were 364 columns. This matched the shape used in [Feature Selection](#23-feature-selection), thus I am confident of moving forward with prediction in [3.3.2 Visualizing Results](#332-visualizing-results)
 
 ### 3.3.2 Visualizing Results
 
-After inputting the data gathered in [3.3.1 Data for finding best locations](#3.3.1-data-for-finding-best-locations) into the KNN model, I retrieved the following dataframe:
+After inputting the data gathered in [3.3.1 Data for finding best locations](#331-data-for-finding-best-locations) into the KNN model, I retrieved the following dataframe:
 
 ![venues_analyzed](images/venues_analyzed.png)
 
@@ -250,7 +250,7 @@ To address the factor that different restaurants attract different demographics 
 
 Addressing the factor that a restaurant may have began earlier would be as simple as retrieving a restaurant's start date and only feeding Chinese Restaurants with similar start dates to train the classification model. However, doing so may lead to insufficient dataset. Instead, I would recommend to use 'Likes' from restaurants that are fairly new (perhaps within a year old - more experiments need to be done) as doing so would limit other variables such as consumers growing a preference for the restaurant and hence coming back often rather than due to its location, which is what we are trying to predict here. Thus, limiting the 'Likes' such that we are only retrieving the starting phase of a restaurant would mean that most customers are only going there because of its location as they do not yet know whether the restaurant's quality of food appeals to their personal preferences.
 
-Another thing to consider would be that thelocations taken for predicting in [3.3.1 Data for finding best locations](#3.3.1-data-for-finding-best-locations) did not consider the size of the venue due to limitations of the foursquare api. This would certainly make some venues invalidated as their physical limitations would make it unsuitable for setting up a Chinese restaurant.
+Another thing to consider would be that thelocations taken for predicting in [3.3.1 Data for finding best locations](#331-data-for-finding-best-locations) did not consider the size of the venue due to limitations of the foursquare api. This would certainly make some venues invalidated as their physical limitations would make it unsuitable for setting up a Chinese restaurant.
 
 Lastly, venues taken for prediction also did not consider the huge initial capital outlay in reconstructing venues that do not already have the equipments needed in a restaurant like stoves, exhaust filter, etc. Should a stakeholder that is interested in finding out only popular spots that were previously restaurants and thus, reduce the cost of the initial startup, the party can input only existing restaurants into the KNN model for prediction.
 
