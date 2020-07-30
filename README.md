@@ -90,7 +90,7 @@ The new dataframe now looks like the below:
 
 Exploring the dataframe, we get:
 
-<img src="images/chinese_restaurant_df_info.png" width="300" height="350" />
+<img src="images/chinese_restaurant_df_info.png" width="500" height="350" />
 
 Notice that the column 'Ratings' has 99 non-null Count which means more than 60% of the values for the column is missing. Thus, I will be dropping the entire column before feeding it for training as it would not provide much information.
 
