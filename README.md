@@ -68,17 +68,17 @@ Firstly, the New York data did not come with data for the chinese restaurants. T
 
 Note that the data for this project is limited in the sense that the details of each venue gathered are based on foursquare's existing database.
 
-<img src="images/ny_df.png" width="312" height="400" />
+<img src="images/ny_df.png" width="320" height="400" />
 
 As the foursquare api could only retrieve details of restaurants based on the radius from the centre of a specified latitude and longitude, I was unable to retrieve all chinese restaurants by neighborhood. Moreover, due to limitations in the number of calls I could do as I was a non-premium member, I limited the radius from the center of the neighborhood to 2km. Thus, only chinese restaurants which are within a 2km radius from the center of the neighborhood would be retrieved from the foursquare api.
 
 See below for the resulting dataframe, which I have named chinese_restaurant_df:
 
-<img src="images/chinese_restaurant_df_unfiltered.png" width="800" height=200 />
+<img src="images/chinese_restaurant_df_unfiltered.png" width="775" height=200 />
 
 After exploring chinese_restaurant_df, I noticed that there was a discrepancy in the number of unique neighborhoods (300) as opposed to the number of unique chinese restaurants by coordinates (270). Moreover, while the number of unique chinese restaurants by name is 255, the unique count by restaurant ID is 270. Thus, it is likely that some chinese restaurants have the same name, yet are not referring to the same restaurants since they have different IDs and are located in different places.
 
-<img src="images/chinese_restaurant_df_exp.png" width="300" height="200" />
+<img src="images/chinese_restaurant_df_exp.png" width="500" height="150" />
 
 Now, I will create a new unique_chinese_restaurant_df by removing the duplicated restaurants by ID. The number of duplicated restaurants removed is 34, resulting in only 270 chinese restaurants in the dataframe.
 
