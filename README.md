@@ -74,7 +74,7 @@ As the foursquare api could only retrieve details of restaurants based on the ra
 
 See below for the resulting dataframe, which I have named chinese_restaurant_df:
 
-<img src="images/chinese_restaurant_df_unfiltered.png" width="600" height=300 />
+<img src="images/chinese_restaurant_df_unfiltered.png" width="800" height=200 />
 
 After exploring chinese_restaurant_df, I noticed that there was a discrepancy in the number of unique neighborhoods (300) as opposed to the number of unique chinese restaurants by coordinates (270). Moreover, while the number of unique chinese restaurants by name is 255, the unique count by restaurant ID is 270. Thus, it is likely that some chinese restaurants have the same name, yet are not referring to the same restaurants since they have different IDs and are located in different places.
 
