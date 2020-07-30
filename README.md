@@ -156,7 +156,7 @@ Using the [scikit-learn Decision Tree module](https://scikit-learn.org/stable/mo
 
 Notice that the tree depth that yields the best accuracy score in this case is 2. See below for the Decision Tree visualization:
 
-<img src="images/plot_tree.png" width="400" height=400 />
+<img src="images/plot_tree.png" width="450" height=400 />
 
 At the tree depth of 2, it is evident from the graph that the test accuracy is approximately 42%.
 
