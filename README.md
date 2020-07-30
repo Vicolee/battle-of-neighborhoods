@@ -90,7 +90,7 @@ The new dataframe now looks like the below:
 
 Exploring the dataframe, we get:
 
-<img src="images/chinese_restaurant_df_info.png" width="400" height="300" />
+<img src="images/chinese_restaurant_df_info.png" width="425" height="300" />
 
 Notice that the column 'Ratings' has 99 non-null Count which means more than 60% of the values for the column is missing. Thus, I will be dropping the entire column before feeding it for training as it would not provide much information.
 
@@ -100,7 +100,7 @@ Next, I will normalize the values of 'Likes', 'Ratings', and 'Price Tier' to plo
 
 As seen earlier, there are numerous null values in the 'Price Tier' column as well. To see if I will be able to find a relationship between 'Likes' and 'Price Tier', and thus fill the missing values with a prediction, I will make a scatter plot between the two columns. See below for the plot:
 
-<img src="images/likes_against_price.png" width="300" height=450 />
+<img src="images/likes_against_price.png" width="450" height=550 />
 
 As seen from the above, there is no clear relationship between the two columns. Moreover, since I am only seeking to predict a restaurant's popularity based on locaton, the 'Price Tier' variable should not be part of the feature set. Thus, I will drop the 'Price Tier' column.
 
@@ -142,7 +142,7 @@ Now, for each model, I will be using plotting a graph of accuracy against a hype
 
 Using the [scikit-learn KNN module](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html), I will be tuning for the number of neighbors parameter, starting with the value 1 till 30. See below for the plot between Accuracy and Number of Neighbors.
 
-<img src="images/best_knn.png" width="300" height=450 />
+<img src="images/best_knn.png" width="450" height=550 />
 
 Looking at the graph, it is clear that the best K value for KNN in this case is 2 with 41% accuracy.
 
@@ -152,11 +152,11 @@ Additionally, realise that
 
 Using the [scikit-learn Decision Tree module](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html), I will be tuning for the value of tree's depth, starting with the value 1 till 20. See below for the plot between Accuracy and Decision Tree depth.
 
-![best_dt](images/best_dt.png)
+<img src="images/best_dt.png" width="450" height=550 />
 
 Notice that the tree depth that yields the best accuracy score in this case is 2. See below for the Decision Tree visualization:
 
-![plot_tree](images/plot_tree.png)
+<img src="images/plot_tree.png" width="400" height=400 />
 
 At the tree depth of 2, it is evident from the graph that the test accuracy is approximately 42%.
 
