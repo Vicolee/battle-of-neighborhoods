@@ -68,7 +68,7 @@ Firstly, the New York data did not come with data for the chinese restaurants. T
 
 Note that the data for this project is limited in the sense that the details of each venue gathered are based on foursquare's existing database.
 
-<img src="images/ny_df.png" width="320" height="400" />
+<img src="images/ny_df.png" width="340" height="400" />
 
 As the foursquare api could only retrieve details of restaurants based on the radius from the centre of a specified latitude and longitude, I was unable to retrieve all chinese restaurants by neighborhood. Moreover, due to limitations in the number of calls I could do as I was a non-premium member, I limited the radius from the center of the neighborhood to 2km. Thus, only chinese restaurants which are within a 2km radius from the center of the neighborhood would be retrieved from the foursquare api.
 
@@ -90,7 +90,7 @@ The new dataframe now looks like the below:
 
 Exploring the dataframe, we get:
 
-<img src="images/chinese_restaurant_df_info.png" width="425" height="300" />
+<img src="images/chinese_restaurant_df_info.png" width="450" height="300" />
 
 Notice that the column 'Ratings' has 99 non-null Count which means more than 60% of the values for the column is missing. Thus, I will be dropping the entire column before feeding it for training as it would not provide much information.
 
@@ -188,7 +188,7 @@ The metrics that I will be using for each model are:
 
 See below for the scores calculated for each classifier:
 
-<img src="images/metrics_score.png" width="275" height=200 />
+<img src="images/metrics_score.png" width="300" height=200 />
 
 Looking at the above metric score table, it is clear that KNN model surpasses the others. Note however that the scores aren't high at all. This is likely due to a lack of dataset which will be explained in [Conclusion](#4-conclusion) and proposal to solutions is in [Future Work](#5-future-work).
 
