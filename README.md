@@ -37,6 +37,10 @@
 
 5. [Future Work](#5-future-work)
 
+6. [References](#references)
+
+6. [Contributing](#contributing)
+
 ## 1. Introduction
 
 ### 1.1 Background
@@ -259,3 +263,5 @@ Lastly, venues taken for prediction also did not consider the huge initial capit
 * [New York Neighborhoods](https://ibm.box.com/shared/static/fbpwbovar7lf8p5sgddm06cgipa2rxpe.json)
 * [Foursquare API](https://developer.foursquare.com/docs/places-api/)
 
+## Contributing
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests.
