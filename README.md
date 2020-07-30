@@ -44,7 +44,7 @@ In 2018, according to the International Monetary Fund, China's economy produced 
 
 This makes China the world's largest economy, seconded by the EU with $22 trillion and the United States third, producing $20.5 trillion.
 
-Moreover, in terms of demographics in the United States, the population of Chinese immigrants have grown nearly seven-fold since 1980, reaching almost  2.5 million in 2018 (5.5 percent of the overall foreign-born population) [[source]]([https://www.migrationpolicy.org/article/chinese-immigrants-united-states]). With such an astounding rate of growth of the Chinese community in the United States, it comes with no surprise that there has been an explosion in the demand of Chinese cuisines.
+Moreover, in terms of demographics in the United States, the population of Chinese immigrants have grown nearly seven-fold since 1980, reaching almost  2.5 million in 2018 (5.5 percent of the overall foreign-born population) [[source]([https://www.migrationpolicy.org/article/chinese-immigrants-united-states])]. With such an astounding rate of growth of the Chinese community in the United States, it comes with no surprise that there has been an explosion in the demand of Chinese cuisines.
 
 In this project, I will be using Machine Learning classifiers like KNN and Logistic Regression to predict, based on a venue's surrounding neighborhood, whether the location is a good place to setup a Chinese restaurant in New York.
 
