@@ -152,7 +152,7 @@ Additionally, realise that
 
 Using the [scikit-learn Decision Tree module](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html), I will be tuning for the value of tree's depth, starting with the value 1 till 20. See below for the plot between Accuracy and Decision Tree depth.
 
-<img src="images/best_dt.png" width="375" height=350 />
+<img src="images/best_dt.png" width="400" height=350 />
 
 Notice that the tree depth that yields the best accuracy score in this case is 2. See below for the Decision Tree visualization:
 
@@ -188,7 +188,7 @@ The metrics that I will be using for each model are:
 
 See below for the scores calculated for each classifier:
 
-<img src="images/metrics_score.png" width="300" height=200 />
+<img src="images/metrics_score.png" width="350" height=200 />
 
 Looking at the above metric score table, it is clear that KNN model surpasses the others. Note however that the scores aren't high at all. This is likely due to a lack of dataset which will be explained in [Conclusion](#4-conclusion) and proposal to solutions is in [Future Work](#5-future-work).
 
