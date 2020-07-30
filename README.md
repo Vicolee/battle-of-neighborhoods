@@ -96,11 +96,11 @@ Notice that the column 'Ratings' has 99 non-null Count which means more than 60%
 
 Next, I will normalize the values of 'Likes', 'Ratings', and 'Price Tier' to plot a bar graph so as to visualize the top 10 most popular chinese restaurants by 'Likes'.
 
-<img src="images/most_popular_chinese_restaurant.png" width="450" height=550 />
+<img src="images/most_popular_chinese_restaurant.png" width="475" height=550 />
 
 As seen earlier, there are numerous null values in the 'Price Tier' column as well. To see if I will be able to find a relationship between 'Likes' and 'Price Tier', and thus fill the missing values with a prediction, I will make a scatter plot between the two columns. See below for the plot:
 
-<img src="images/likes_against_price.png" width="450" height=550 />
+<img src="images/likes_against_price.png" width="275" height=350 />
 
 As seen from the above, there is no clear relationship between the two columns. Moreover, since I am only seeking to predict a restaurant's popularity based on locaton, the 'Price Tier' variable should not be part of the feature set. Thus, I will drop the 'Price Tier' column.
 
