@@ -142,7 +142,7 @@ Now, for each model, I will be using plotting a graph of accuracy against a hype
 
 Using the [scikit-learn KNN module](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html), I will be tuning for the number of neighbors parameter, starting with the value 1 till 30. See below for the plot between Accuracy and Number of Neighbors.
 
-<img src="images/best_knn.png" width="375" height=350 />
+<img src="images/best_knn.png" width="400" height=350 />
 
 Looking at the graph, it is clear that the best K value for KNN in this case is 2 with 41% accuracy.
 
@@ -152,7 +152,7 @@ Additionally, realise that
 
 Using the [scikit-learn Decision Tree module](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html), I will be tuning for the value of tree's depth, starting with the value 1 till 20. See below for the plot between Accuracy and Decision Tree depth.
 
-<img src="images/best_dt.png" width="400" height=350 />
+<img src="images/best_dt.png" width="425" height=350 />
 
 Notice that the tree depth that yields the best accuracy score in this case is 2. See below for the Decision Tree visualization:
 
