@@ -164,7 +164,7 @@ At the tree depth of 2, it is evident from the graph that the test accuracy is a
 
 For SVM, I used the [scikit-learn SVM module](https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html). Then, I tuned the C value from 0.1 to 1.0. C value in this case refers to the regularization parameter as seen in the [docs](https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html). The strength of the regularization is inversely proportional to C. Refer to the graph below for the accuracy against C Value plot.
 
-<img src="images/best_svm.png" width="375" height=350 />
+<img src="images/best_svm.png" width="400" height=350 />
 
 Since there isn't any noticeable difference in the accuracy of the test set based on the change in C value, I will be setting C value to 0.1 when comparing with the other models. At this value, the model has a train accuracy of 52% and test accuracy of about 38%.
 
@@ -172,7 +172,7 @@ Since there isn't any noticeable difference in the accuracy of the test set base
 
 For Logistic Regression model, I used the [scikit-learn LogisticRegression module](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html) with the solver parameter set to saga as it is a multiclass problem. I also varied the C Value, which is the inverse of regularization strength, to determine the value that gives the highest test accuracy. Refer to the graph below:
 
-<img src="images/best_lr.png" width="375" height=350 />
+<img src="images/best_lr.png" width="400" height=350 />
 
 Evidently, the best C value in this case is 0.09 with an accuracy of approximately 30% for test set and 100% for train set.
 
@@ -188,7 +188,7 @@ The metrics that I will be using for each model are:
 
 See below for the scores calculated for each classifier:
 
-![metrics_score](images/metrics_score.png)
+<img src="images/metrics_score.png" width="250" height=150 />
 
 Looking at the above metric score table, it is clear that KNN model surpasses the others. Note however that the scores aren't high at all. This is likely due to a lack of dataset which will be explained in [Conclusion](#4-conclusion) and proposal to solutions is in [Future Work](#5-future-work).
 
