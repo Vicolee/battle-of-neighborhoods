@@ -31,7 +31,7 @@
 
     3. [Model Application](#33-model-application)
         1. [Data for finding best locations](#331-data-for-finding-best-locations)
-        2. [Visualizing Results](#32-visualizing-results)
+        2. [Visualizing Results](#332-visualizing-results)
 
 4. [Conclusion](#4-conclusion)
 
@@ -68,7 +68,7 @@ Firstly, the New York data did not come with data for the chinese restaurants. T
 
 Note that the data for this project is limited in the sense that the details of each venue gathered are based on foursquare's existing database.
 
-![ny_df](images/ny_df.png)
+<img src="images/ny_df.png" width="250" height="400" />
 
 As the foursquare api could only retrieve details of restaurants based on the radius from the centre of a specified latitude and longitude, I was unable to retrieve all chinese restaurants by neighborhood. Moreover, due to limitations in the number of calls I could do as I was a non-premium member, I limited the radius from the center of the neighborhood to 2km. Thus, only chinese restaurants which are within a 2km radius from the center of the neighborhood would be retrieved from the foursquare api.
 
@@ -78,7 +78,7 @@ See below for the resulting dataframe, which I have named chinese_restaurant_df:
 
 After exploring chinese_restaurant_df, I noticed that there was a discrepancy in the number of unique neighborhoods (300) as opposed to the number of unique chinese restaurants by coordinates (270). Moreover, while the number of unique chinese restaurants by name is 255, the unique count by restaurant ID is 270. Thus, it is likely that some chinese restaurants have the same name, yet are not referring to the same restaurants since they have different IDs and are located in different places.
 
-![chinese_restaurant_df_exp](images/chinese_restaurant_df_exp.png)
+<img src="images/chinese_restaurant_df_exp.png" width="300" height="200" />
 
 Now, I will create a new unique_chinese_restaurant_df by removing the duplicated restaurants by ID. The number of duplicated restaurants removed is 34, resulting in only 270 chinese restaurants in the dataframe.
 
@@ -90,17 +90,17 @@ The new dataframe now looks like the below:
 
 Exploring the dataframe, we get:
 
-![chinese_restaurant_df_info](images/chinese_restaurant_df_info.png)
+<img src="images/chinese_restaurant_df_info.png" width="300" height="350" />
 
 Notice that the column 'Ratings' has 99 non-null Count which means more than 60% of the values for the column is missing. Thus, I will be dropping the entire column before feeding it for training as it would not provide much information.
 
 Next, I will normalize the values of 'Likes', 'Ratings', and 'Price Tier' to plot a bar graph so as to visualize the top 10 most popular chinese restaurants by 'Likes'.
 
-![most_popular_chinese_restaurant](images/most_popular_chinese_restaurant.png)
+<img src="images/most_popular_chinese_restaurant.png" width="300" height=450 />
 
 As seen earlier, there are numerous null values in the 'Price Tier' column as well. To see if I will be able to find a relationship between 'Likes' and 'Price Tier', and thus fill the missing values with a prediction, I will make a scatter plot between the two columns. See below for the plot:
 
-![likes_against_price](images/likes_against_price.png)
+<img src="images/likes_against_price.png" width="300" height=450 />
 
 As seen from the above, there is no clear relationship between the two columns. Moreover, since I am only seeking to predict a restaurant's popularity based on locaton, the 'Price Tier' variable should not be part of the feature set. Thus, I will drop the 'Price Tier' column.
 
@@ -142,7 +142,7 @@ Now, for each model, I will be using plotting a graph of accuracy against a hype
 
 Using the [scikit-learn KNN module](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html), I will be tuning for the number of neighbors parameter, starting with the value 1 till 30. See below for the plot between Accuracy and Number of Neighbors.
 
-![best_knn](images/best_knn.png)
+<img src="images/best_knn.png" width="300" height=450 />
 
 Looking at the graph, it is clear that the best K value for KNN in this case is 2 with 41% accuracy.
 
