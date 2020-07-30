@@ -188,7 +188,7 @@ The metrics that I will be using for each model are:
 
 See below for the scores calculated for each classifier:
 
-<img src="images/metrics_score.png" width="350" height=200 />
+<img src="images/metrics_score.png" width="400" height=200 />
 
 Looking at the above metric score table, it is clear that KNN model surpasses the others. Note however that the scores aren't high at all. This is likely due to a lack of dataset which will be explained in [Conclusion](#4-conclusion) and proposal to solutions is in [Future Work](#5-future-work).
 
